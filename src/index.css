@@ -1,0 +1,51 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 65px;
+    background: linear-gradient(90deg, #AAC4FF 1.18%, #cfddfd 100%);
+    color: white;
+    padding: 20px;
+}
+.header .leftside{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.header .rightside {
+    margin-right: 4rem;
+}
+.header--image{
+    height: 100%;
+    margin-right: 6px;
+}
+.header--tittle{
+    font-size: 1.25rem;
+}
+.header--project{
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+/* main */
+main{
+    padding: 36px;
+}
+/* form */
+.form {
+    display: grid;
+    grid-template: 40px 40px / 1fr 1fr;
+    gap: 1rem;
+}
+.form--input{
+    border-radius: 5px;
+    border: 1px solid #D5D4D8;
+    text-indent: 5px;
+}
+.form--button {
+    grid-column: 1 / -1;
+    background: linear-gradient(90.41deg, #FD8A8A 1.14%, #fed2d2 100%);
+    color: white;
+    cursor: pointer;
+}
