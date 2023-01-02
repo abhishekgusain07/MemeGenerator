@@ -65,6 +65,51 @@ main{
     align-items: center;
     margin: auto;
 }
+.card{
+    border: 2px solid black;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+}
 .card--image{
+    max-width: 200px;
     border-radius: 50%;
+}
+.star--image{
+    max-width: 20px;
+}
+.counter {
+    display: flex;
+    background-color: #FD8A8A;
+    justify-content: center;
+    position: relative;
+    margin-top: 3rem;
+}
+.counter--minus {
+    border: 2px solid white;
+    border-radius: 50%;
+    width: 60px;
+    position: absolute;
+    left: 11rem;
+    height: 60px;
+}
+.counter--count{
+    border: 2px solid white;
+    background-color: grey;
+    border-radius: 50%;
+    text-align:center;
+    width: 100px;
+    top:1rem;
+    position: absolute;
+    right: 18rem;
+    z-index: 10;
+    height:100px;
+}
+.counter--plus {
+    border: 2px solid white;
+    border-radius: 50%;
+    width: 60px;
+    position: absolute;
+    right: 15.8rem;
+    height: 60px;
 }
