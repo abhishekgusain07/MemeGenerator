@@ -8,7 +8,6 @@ export default function Testing4() {
     function subtract() {
         setCount(prevCount => prevCount-1)
     }
-    console.log('Testing4 componenet rendered')
     return(
         <div className='counter'>
             <button className='counter--minus' onClick={subtract}>-</button>

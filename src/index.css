@@ -84,6 +84,7 @@ main{
     justify-content: center;
     position: relative;
     margin-top: 3rem;
+    margin-bottom: 10rem;
 }
 .counter--minus {
     border: 2px solid white;
@@ -112,4 +113,13 @@ main{
     position: absolute;
     right: 15.8rem;
     height: 60px;
+}
+.box {
+    display: inline-block;
+    height: 100px;
+    width: 100px;
+    text-align: center;
+    border-radius: 9px;
+    border: 2px solid black;
+    margin: 1rem;
 }
