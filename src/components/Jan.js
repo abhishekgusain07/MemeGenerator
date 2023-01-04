@@ -3,6 +3,7 @@ import Boxes from './Boxes'
 import Box from './Box'
 export default function Jan() {
     const [element, setElement] = useState(Boxes)
+    
     function changeColor(id) {
         setElement((prevArray) => {
             const newArray = []
@@ -21,8 +22,17 @@ export default function Jan() {
             return newArray
         })
     }
+    // another method of changecolor function
+    function changeColor2(id) {
+        setElement((prevSquare) => {
+            return prevSquare.map((square) => {
+                return square.id === id ? {...square, on:!square.on} : square;
+            })
+        })
+    }
+
     const newElement = element.map((item) => (
-        <Box key={item.id} id={item.id} on={item.on} handleClick = {changeColor}/>
+        <Box key={item.id} id={item.id} on={item.on} handleClick = {changeColor2}/>
     ))
     return(
         <div>

@@ -6,6 +6,8 @@ import Testing2 from '../src/components/Testing2'
 import Testing3 from '../src/components/Testing3'
 import Testing4 from '../src/components/Testing4'
 import Jan from '../src/components/Jan'
+import Jokes from '../src/components/Jokes'
+import Challenge from '../src/components/SmallChallenge'
 export default function App(){
   return(
     <div>
@@ -16,6 +18,8 @@ export default function App(){
       <Testing3 />
       <Testing4 />
       <Jan />
+      <Jokes />
+      <Challenge />
     </div>
   )
 }
