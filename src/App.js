@@ -8,6 +8,8 @@ import Testing4 from '../src/components/Testing4'
 import Jan from '../src/components/Jan'
 import Jokes from '../src/components/Jokes'
 import Challenge from '../src/components/SmallChallenge'
+import Form from '../src/components/Form'
+import NewForm from '../src/components/NewForm'
 export default function App(){
   return(
     <div>
@@ -20,6 +22,7 @@ export default function App(){
       <Jan />
       <Jokes />
       <Challenge />
+      <NewForm />
     </div>
   )
 }
