@@ -10,6 +10,7 @@ import Jokes from '../src/components/Jokes'
 import Challenge from '../src/components/SmallChallenge'
 import Form from '../src/components/Form'
 import NewForm from '../src/components/NewForm'
+import FormChallenge from '../src/components/FormChallenge'
 export default function App(){
   return(
     <div>
@@ -23,6 +24,7 @@ export default function App(){
       <Jokes />
       <Challenge />
       <NewForm />
+      <FormChallenge />
     </div>
   )
 }

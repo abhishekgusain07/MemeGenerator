@@ -16,15 +16,42 @@ export default function Meme(){
             randomImage: url
         }))
     }
+    console.log(meme.topText, " ", meme.bottomText)
+    
+    // dealing with the change when we type in input fields
+    function handleTextChange(event) {
+        const {name, value} = event.target
+        setMeme(prevState => ({
+            ...prevState,
+            [name]:value
+        }))
+    }
     return(
         <main>
             <div className="form">
-                <input type="text" className="form--input" placeholder="Top text"></input>
-                <input className="form--input" type="text" placeholder="Bottom text"></input>
+                <input type="text" 
+                className="form--input" 
+                placeholder="Top text" 
+                name="topText"
+                value = {meme.topText}
+                onChange={handleTextChange}
+                />
+
+                <input 
+                className="form--input" 
+                type="text" 
+                placeholder="Bottom text"
+                name="bottomText"
+                value = {meme.bottomText}
+                onChange={handleTextChange}
+                />
+
                 <button onClick = {getImage} className="form--button">Get a new image</button>
             </div>
-            <div>
+            <div className="meme">
                 <img className="meme--image" src = {meme.randomImage}></img>
+                <h2 className="meme--text top">{meme.topText}</h2>
+                <h2 className="meme--text bottom">{meme.bottomText}</h2>
             </div>
         </main>
     )

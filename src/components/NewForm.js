@@ -5,9 +5,11 @@ export default function NewForm() {
         lastName: "",
         email: "",
         comments: "",
-        isFriendly: true
+        isFriendly: true,
+        employment: "",
+        favColor: ""
     })
-    console.log(formData)
+    console.log(formData.favColor)
     
     // ----------ONE WAY ---
     // function handleChange(event) {
@@ -29,9 +31,19 @@ export default function NewForm() {
             }
         })
     }
+
+    // for fun only
+    function submitToApi(obj) {
+        console.dir(obj)
+    }
+    
+    function handleSubmit(event) {
+        event.preventDefault()
+        submitToApi(formData);
+    }
     return (
         <div className='Form'>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <input 
                     type="text"
                     placeholder = "First Name"
@@ -68,6 +80,58 @@ export default function NewForm() {
                 />
                 <label htmlFor='isFriendly'>Are you friendly ?</label>
                 <br/>
+                <br />
+                <fieldset>
+                    <legend>Current employement status</legend>
+                    <input 
+                        type = "radio"
+                        id = "unemployed"
+                        name = "employment"
+                        value ="unemployed"
+                        checked = {formData.employment === 'unemployed'}
+                        onChange={handleChange}
+                    />
+                    <label htmlFor='unemployed'>Unemployed</label>
+                    <br />
+                    <input 
+                        type="radio"
+                        id ="Part-time"
+                        name="employment"
+                        value = "Part-time"
+                        onChange={handleChange}
+                    />
+                    <label htmlFor="Part-time">part time</label>
+                    <br/>
+                    <input 
+                        type="radio"
+                        id = "Full-time"
+                        name = "employment"
+                        value = "Full-time"
+                        onChange={handleChange}
+                    /> 
+                    <label htmlFor="Full-time">Full Time</label>
+                    <br/>
+                </fieldset>
+                <br />
+
+                <label htmlFor='favColor' > what is your fav color</label>
+                <br/>
+                <select 
+                    id = "favColor"
+                    value={formData.favColor}
+                    onChange={handleChange}
+                    name="favColor"
+                >
+                    <option value="red">red</option>
+                    <option value="orange">orange</option>
+                    <option value="yellow">yellow</option>
+                    <option value="green">Green</option>
+                    <option value="blue">blue</option>
+                    <option value="indigo">Indigo</option>
+                    <option value="violet">violet</option>
+                </select>
+                <br/><br/>
+                <button>submit</button>
             </form>
         </div>
     )
