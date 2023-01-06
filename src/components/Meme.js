@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import memesData from "../memesData";
 export default function Meme(){
     const [meme, setMeme] = useState({
@@ -6,9 +6,31 @@ export default function Meme(){
         bottomText: "",
         randomImage: "http://i.imgflip.com/1bij.jpg"
     })
-    const[allMemeImages, setAllMemeImages] = useState(memesData)
+    
+    // using useEffect to fetch data from api, and setting it to "allMeme" state
+    
+    // =========================================first method================================
+    // in this first method we cannot use async because asycn function always returns a promise and but we want to return another function in cleanup 
+
+    const[allMeme, setAllMeme] = useState([])
+    // useEffect(()=>{
+    //     fetch("https://api.imgflip.com/get_memes")
+    //     .then(res => res.json())
+    //     .then(data => setAllMeme(data.data.memes));
+    // },[])
+
+    // ========================================second method================================
+    useEffect(()=>{
+        const getMemeDataFromApi = async() => {
+            const result = await fetch("https://api.imgflip.com/get_memes")
+            const data = await result.json()
+            setAllMeme(data.data.memes)
+        }
+        getMemeDataFromApi()
+    },[])
+
     function getImage(){
-        const memesArray = memesData.data.memes
+        const memesArray = allMeme
         const random = Math.floor(Math.random() * memesArray.length);
         const url = memesArray[random].url
         setMeme(prevMeme => ({
@@ -16,8 +38,6 @@ export default function Meme(){
             randomImage: url
         }))
     }
-    console.log(meme.topText, " ", meme.bottomText)
-    
     // dealing with the change when we type in input fields
     function handleTextChange(event) {
         const {name, value} = event.target
