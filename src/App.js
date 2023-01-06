@@ -11,6 +11,8 @@ import Challenge from '../src/components/SmallChallenge'
 import Form from '../src/components/Form'
 import NewForm from '../src/components/NewForm'
 import FormChallenge from '../src/components/FormChallenge'
+import ApiForMeme from '../src/components/ApiForMeme'
+import UseState1 from '../src/components/UseState1'
 export default function App(){
   return(
     <div>
@@ -25,6 +27,7 @@ export default function App(){
       <Challenge />
       <NewForm />
       <FormChallenge />
+      <UseState1 />
     </div>
   )
 }
