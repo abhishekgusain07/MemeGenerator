@@ -15,6 +15,7 @@ import ApiForMeme from '../src/components/ApiForMeme'
 import UseState1 from '../src/components/UseState1'
 import Nchallenge from '../src/components/Nchallenge'
 import NchallengeCopy from '../src/components/NchallengeCopy'
+import LastChallenge from '../src/components/LastChallenge'
 export default function App(){
   return(
     <div>
@@ -32,6 +33,7 @@ export default function App(){
       <UseState1 />
       <Nchallenge />
       <NchallengeCopy />
+      <LastChallenge />
     </div>
   )
 }
